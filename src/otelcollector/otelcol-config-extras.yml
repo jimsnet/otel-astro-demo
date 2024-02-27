@@ -16,3 +16,12 @@
 #    pipelines:
 #      traces:
 #        exporters: [spanmetrics, otlphttp/example]
+
+exporters:
+  otlphttp/external:
+    endpoint: ${EXTERNAL_TRACE_BACKEND}
+
+service:
+  pipelines:
+    traces:
+      exporters: [spanmetrics, otlphttp/external]
