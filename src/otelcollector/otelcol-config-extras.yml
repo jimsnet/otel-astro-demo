@@ -19,9 +19,10 @@
 
 exporters:
   otlphttp/external:
-    endpoint: ${EXTERNAL_TRACE_BACKEND}
+    # endpoint: ${env:EXTERNAL_TRACE_BACKEND}
+    endpoint: host.docker.internal:4317
 
 service:
   pipelines:
     traces:
-      exporters: [spanmetrics, otlphttp/external]
+      exporters: [otlp, debug, spanmetrics, otlphttp/external]
