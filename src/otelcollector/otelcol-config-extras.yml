@@ -21,6 +21,8 @@ exporters:
   otlp/external:
     # endpoint: ${env:EXTERNAL_TRACE_BACKEND}
     endpoint: host.docker.internal:4317
+    tls:
+      insecure: true
 
 service:
   pipelines:
