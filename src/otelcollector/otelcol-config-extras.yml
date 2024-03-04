@@ -26,3 +26,7 @@ service:
   pipelines:
     traces:
       exporters: [otlp, debug, spanmetrics, otlphttp/external]
+    metrics:
+      exporters: [otlphttp/prometheus, debug, otlphttp/external]
+    logs:
+      exporters: [opensearch, debug, otlphttp/external]
