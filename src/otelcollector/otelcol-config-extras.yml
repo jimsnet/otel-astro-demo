@@ -18,15 +18,15 @@
 #        exporters: [spanmetrics, otlphttp/example]
 
 exporters:
-  otlphttp/external:
+  otlp/external:
     # endpoint: ${env:EXTERNAL_TRACE_BACKEND}
     endpoint: host.docker.internal:4317
 
 service:
   pipelines:
     traces:
-      exporters: [otlp, debug, spanmetrics, otlphttp/external]
+      exporters: [otlp, debug, spanmetrics, otlp/external]
     metrics:
-      exporters: [otlphttp/prometheus, debug, otlphttp/external]
+      exporters: [otlphttp/prometheus, debug, otlp/external]
     logs:
-      exporters: [opensearch, debug, otlphttp/external]
+      exporters: [opensearch, debug, otlp/external]
