@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     Dynamically load the script
       const script = document.createElement('script');
-      script.src = '/scripts/acn-genwiz-rum-monitor.js';
+      script.src = '../public/scripts/acn-genwiz-rum-monitor.js';
       script.async = true;
       document.body.appendChild(script);
 
