@@ -18,15 +18,15 @@ const Footer = () => {
     setSessionId(userId);
 
     // Dynamically load the script
-    const script = document.createElement('script');
-    script.src = '/scripts/acn-genwiz-rum-monitor.js';
-    script.async = true;
-    document.body.appendChild(script);
+ //   const script = document.createElement('script');
+ //   script.src = '/scripts/acn-genwiz-rum-monitor.js';
+ //   script.async = true;
+ //   document.body.appendChild(script);
 
     // Cleanup function to remove the script when the component unmounts
-    return () => {
-      document.body.removeChild(script);
-    };
+//    return () => {
+//      document.body.removeChild(script);
+//    };
 
   }, []);
 
