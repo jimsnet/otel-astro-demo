@@ -17,18 +17,57 @@
 #      traces:
 #        exporters: [spanmetrics, otlphttp/example]
 
+processors:
+  batch:
+  resourcedetection/ec2:
+    detectors: [env, ec2]
+    timeout: 2s
+    override: false
+    ec2:
+      tags:
+        - ^tag1$
+        - ^tag2$
+#    attributes:
+#      environment: Dev
+  resourcedetection/system:
+    detectors: [env, system]
+    timeout: 2s
+    override: false
+    system:
+      hostname_sources: ["os"]
+    # attributes: ["aa", "bb"]
+#  resourcedetection/docker:
+#    detectors: [env, docker]
+#    timeout: 2s
+#    override: false
+  attributes/insert:
+    actions:
+      - key: "tenant_name"
+        value: "tenant1"
+        action: insert
+      - key: "application_name"
+        value: "Astro Commerce"
+        action: insert
+      - key: "ci_type"
+        value: "application"
+        action: insert 
+
 exporters:
   otlp/external:
     # endpoint: ${env:EXTERNAL_TRACE_BACKEND}
     endpoint: host.docker.internal:4317
+    # endpoint: somehost:4317
     tls:
       insecure: true
 
 service:
   pipelines:
     traces:
+      processors: [batch, resourcedetection/system, attributes/insert]
       exporters: [otlp, debug, spanmetrics, otlp/external]
     metrics:
+      processors: [batch, resourcedetection/system, attributes/insert]
       exporters: [otlphttp/prometheus, debug, otlp/external]
     logs:
+      processors: [batch, resourcedetection/system, attributes/insert]
       exporters: [opensearch, debug, otlp/external]
