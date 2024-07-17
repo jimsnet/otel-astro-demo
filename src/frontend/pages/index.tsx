@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { NextPage } from 'next';
+import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import ProductList from '../components/ProductList';
@@ -19,13 +20,12 @@ const Home: NextPage = () => {
   );
 
   useEffect(() => {
-    Dynamically load the script
+    console.log("RUMdsfsf")
       const script = document.createElement('script');
       script.src = '../public/scripts/acn-genwiz-rum-monitor.js';
       script.async = true;
       document.body.appendChild(script);
-
-    Cleanup function to remove the script when the component unmounts
+      console.log("RUMdsfsfdfd")
        return () => {
          document.body.removeChild(script);
        };
