@@ -18,9 +18,9 @@ const Home: NextPage = () => {
   const { data: productList = [] } = useQuery(['products', selectedCurrency], () =>
     ApiGateway.listProducts(selectedCurrency)
   );
-
+    console.log("Insideindex.tsx")
   useEffect(() => {
-    console.log("RUMdsfsf")
+      console.log("index.tsx:::useEffect")
       const script = document.createElement('script');
       script.src = '../public/scripts/acn-genwiz-rum-monitor.js';
       script.async = true;
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
          document.body.removeChild(script);
        };
   }, []);
-
+ console.log("index.tsx:::beforereturn")
   return (
     <Layout>
       <S.Home data-cy={CypressFields.HomePage}>
