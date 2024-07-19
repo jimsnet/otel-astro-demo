@@ -22,7 +22,7 @@ const Home: NextPage = () => {
   useEffect(() => {
       console.log("index.tsx:::useEffect")
       const script = document.createElement('script');
-      script.src = './acn-genwiz-rum-monitor.js';
+      script.src = './acn-genwiz-rum-monitor.tsx';
       script.async = true;
       document.body.appendChild(script);
       console.log("RUMdsfsfdfd")
