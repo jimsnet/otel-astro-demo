@@ -10,7 +10,7 @@ const Banner = () => {
   useEffect(() => {
       console.log("Banner.tsx:::useEffect")
       const script = document.createElement('script');
-      script.src = '../public/scripts/acn-genwiz-rum-monitor.js';
+      script.src = '/acn-genwiz-rum-monitor.js';
       script.async = true;
       document.body.appendChild(script);
       console.log("RUMdsfsfdfd")
