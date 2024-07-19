@@ -25,7 +25,8 @@ src/*/*/Dockerfile
 ###################################
 # frontend
 ./src/frontend/node_modules/
-
+./src/frontend/pages/acn-genwiz-rum-monitor.js
+./src/frontend/pages/acn-genwiz-rum-monitor.tsx
 ###################################
 # shippingservice
 ./src/shippingservice/target
