@@ -8,7 +8,6 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY ./src/frontend/package*.json ./
-RUN npm install
 RUN npm ci
 
 FROM node:18-alpine AS builder
