@@ -42,12 +42,7 @@
     "sharp": "0.33.2",
     "styled-components": "6.1.1",
     "ts-proto": "1.164.0",
-    "uuid": "9.0.1",
-    "bowser": "^2.11.0",
-    "browser": "^0.2.6",
-    "javascript-obfuscator": "^4.1.1",
-    "terser": "^5.31.2",
-    "web-vitals": "^4.2.1"
+    "uuid": "9.0.1"
   },
   "devDependencies": {
     "@types/node": "20.9.0",
