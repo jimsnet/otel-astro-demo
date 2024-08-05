@@ -10,7 +10,6 @@ import CartProvider from '../providers/Cart.provider';
 import { ThemeProvider } from 'styled-components';
 import Theme from '../styles/Theme';
 import FrontendTracer from '../utils/telemetry/FrontendTracer';
-console.log("Inside_app.tsx")
 declare global {
   interface Window {
     ENV: {
@@ -45,7 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext);
-console.log("_app.tsx:::MyApp.getInitialProps")
   return { ...appProps };
 };
 

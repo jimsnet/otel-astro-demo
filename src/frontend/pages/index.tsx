@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { NextPage } from 'next';
-import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import ProductList from '../components/ProductList';
@@ -18,19 +17,8 @@ const Home: NextPage = () => {
   const { data: productList = [] } = useQuery(['products', selectedCurrency], () =>
     ApiGateway.listProducts(selectedCurrency)
   );
-    console.log("Insideindex.tsx")
-  useEffect(() => {
-      console.log("index.tsx:::useEffect")
-      const script = document.createElement('script');
-      script.src = '/acn-genwiz-rum-monitor.js';
-      script.async = true;
-      document.body.appendChild(script);
-      console.log("RUMdsfsfdfd")
-       return () => {
-         document.body.removeChild(script);
-       };
-  }, []);
- console.log("index.tsx:::beforereturn")
+
+
   return (
     <Layout>
       <S.Home data-cy={CypressFields.HomePage}>

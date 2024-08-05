@@ -6,7 +6,6 @@ import { ServerStyleSheet } from 'styled-components';
 import {context, propagation} from "@opentelemetry/api";
 
 const { ENV_PLATFORM, WEB_OTEL_SERVICE_NAME, PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT, OTEL_COLLECTOR_HOST} = process.env;
-console.log("inside_document.tsx")
 export default class MyDocument extends Document<{ envString: string }> {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();

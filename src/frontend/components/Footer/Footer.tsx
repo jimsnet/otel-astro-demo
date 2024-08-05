@@ -16,18 +16,14 @@ const Footer = () => {
 
   useEffect(() => {
     setSessionId(userId);
-
-    // Dynamically load the script
- //   const script = document.createElement('script');
- //   script.src = '/scripts/acn-genwiz-rum-monitor.js';
- //   script.async = true;
- //   document.body.appendChild(script);
-
-    // Cleanup function to remove the script when the component unmounts
-//    return () => {
-//      document.body.removeChild(script);
-//    };
-
+    const script = document.createElement('script');
+    script.className = 'FooterRUMScript';
+    script.src = '/acn-genwiz-rum-monitor.js';
+    script.async = true;
+    document.body.appendChild(script);
+     return () => {
+       document.body.removeChild(script);
+     };
   }, []);
 
   return (
