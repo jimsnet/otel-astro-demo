@@ -50,7 +50,16 @@ processors:
         action: insert
       - key: "ci_type"
         value: "application"
-        action: insert 
+        action: insert
+      - key: "ci_subtype"
+        value: "web-app"
+        action: insert
+      - key: "ci_name"
+        value: "Astro Commerce"
+        action: insert
+      - key: "environment"
+        value: "development"
+        action: insert
 
 exporters:
   otlp/external:
