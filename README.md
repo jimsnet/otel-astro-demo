@@ -42,6 +42,9 @@ your preferred deployment method:
 - [Docker](https://opentelemetry.io/docs/demo/docker_deployment/)
 - [Kubernetes](https://opentelemetry.io/docs/demo/kubernetes_deployment/)
 
+Build from source:
+ex: frontendservice: docker build -t jimsnet/otel-demo-env:v2-frontend -f src/frontend/Dockerfile .
+
 ## Documentation
 
 For detailed documentation, see [Demo Documentation][docs]. If you're curious
