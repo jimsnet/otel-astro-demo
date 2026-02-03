@@ -63,7 +63,7 @@ export default class MyDocument extends Document<{ envString: string }> {
                         s: s,
                         config: {
                             genwizid: 'genwiz-global-id-2',
-                            applicationName: 'Astro Commerce',
+                            applicationname: 'Astro Commerce',
                             applicationversion: 'v1.1.0',
                             environment: 'development',
                             tenant: 'tenant1'
