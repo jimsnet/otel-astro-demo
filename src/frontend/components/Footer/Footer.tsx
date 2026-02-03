@@ -14,17 +14,17 @@ const { userId } = SessionGateway.getSession();
 const Footer = () => {
   const [sessionId, setSessionId] = useState('');
 
-  useEffect(() => {
-    setSessionId(userId);
-    const script = document.createElement('script');
-    script.className = 'FooterRUMScript';
-    script.src = '/acn-genwiz-rum-monitor.js';
-    script.async = true;
-    document.body.appendChild(script);
-     return () => {
-       document.body.removeChild(script);
-     };
-  }, []);
+//   useEffect(() => {
+//     setSessionId(userId);
+//     const script = document.createElement('script');
+//     script.className = 'FooterRUMScript';
+//     script.src = '/acn-genwiz-rum-monitor.js';
+//     script.async = true;
+//     document.body.appendChild(script);
+//      return () => {
+//        document.body.removeChild(script);
+//      };
+//   }, []);
 
   return (
     <S.Footer>
