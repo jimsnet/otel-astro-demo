@@ -79,7 +79,7 @@ export default class MyDocument extends Document<{ envString: string }> {
                 })(
                     'gzRum',
                     '1.1.0',
-                    'https://dev-genwiz-observability.com/RUMPerformanceMetrics.js'
+                    'https://genwiz-observability.com/RUMPerformanceMetrics.js'
                 );
                 `,
             }}
